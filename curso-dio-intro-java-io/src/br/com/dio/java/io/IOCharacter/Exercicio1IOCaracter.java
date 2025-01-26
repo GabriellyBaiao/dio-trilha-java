@@ -1,3 +1,5 @@
+package br.com.dio.java.io.IOCharacter;
+
 import java.io.*;
 
 public class Exercicio1IOCaracter {
