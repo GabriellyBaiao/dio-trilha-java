@@ -60,7 +60,7 @@ public class ExemploIOData {
         System.out.printf("\nNome................: %s", nome);
         System.out.printf("\nQuantidade................: %d", quantidade);
         System.out.printf("\nTamanho................: %s", tamanho);
-        System.out.printf("\nPreço................: %s\n", preco);
+        System.out.printf("\nPreço................: %.2f\n", preco);
         System.out.println("Total valor das peças: " + (quantidade * preco));
 
         dis.close();

@@ -4,7 +4,7 @@ import java.io.*;
 
 public class ExemploIObject {
     public static void serializacao() throws IOException {
-        Gato gato = new Gato("Sima", 6, "amarelado" );
+        Gato gato = new Gato("Sima", 6, "amarelado", true, false);
 
         File f = new File("gato");
 
@@ -22,9 +22,26 @@ public class ExemploIObject {
 
     }
 
-    public static void desserializacao(String arquivo){}
+    public static void desserializacao(String arquivo) throws IOException, ClassNotFoundException {
 
-    public static void main(String[] args) throws IOException {
-        serializacao();
+//        InputStream is = new FileInputStream(arquivo);
+//        ObjectInputStream ois = new ObjectInputStream(is);
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(arquivo));
+        Gato objetoGato = (Gato) ois.readObject();
+
+        System.out.printf("\nNome................: %s\n", objetoGato.getNome());
+        System.out.printf("Idade................: %d\n", objetoGato.getIdade());
+        System.out.printf("Cor................: %s\n", objetoGato.getCor());
+        System.out.printf("Castrado.....................%s\n", objetoGato.isCastrado());
+        System.out.printf("Ronrona.....................%s\n", objetoGato.isRonrona());
+        System.out.println(objetoGato);
+
+        ois.close();
+
+    }
+
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+//        serializacao();
+        desserializacao("");
     }
 }
