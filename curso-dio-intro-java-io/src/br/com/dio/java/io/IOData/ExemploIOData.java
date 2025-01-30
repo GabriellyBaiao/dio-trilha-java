@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ExemploIOData {
     public static void incluirProduto() throws IOException {
-        File f = new File("C:/Users/USER/OneDrive - Fatec Centro Paula Souza/Documents/1_intro/peca-de-roupa.bin");
+        File f = new File("");
 
         PrintStream ps = new PrintStream(System.out);
         ps.flush();
